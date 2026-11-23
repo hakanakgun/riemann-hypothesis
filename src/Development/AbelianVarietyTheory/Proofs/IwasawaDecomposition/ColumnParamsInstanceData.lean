@@ -76,6 +76,8 @@ variable {R F} {X0 : BaseLevelRowSide D} {Y : Read (A3 := A3) R.toRealDat F.lv2 
 
 
 
+set_option backward.isDefEq.lazyWhnfCore false in
+set_option backward.isDefEq.lazyProjDelta false in
 def newC (C₀ : ReadC R (reFace F Dc Sp₀ Zsc₀) X0 Y) (ht : Y'.tup = Y.tup) (hj : HEq Y'.jA Y.jA) :
     ReadC (newR R lam err) (reFace F Dc Sp Zsc) X0 Y' where
   wU := (by with_unfolding_all exact (C₀.wU :))
@@ -147,6 +149,8 @@ variable {L : SizeData₂ D} {hT : GatTies D} {Gi : Formalism.MainNotions.G.Inst
 
 
 
+set_option backward.isDefEq.lazyWhnfCore false in
+set_option backward.isDefEq.lazyProjDelta false in
 def newTw (hC : GlobalTheory.Published.DiscreteSeriesCover ∧ GlobalTheory.Published.HarishChandraModules ∧ GlobalTheory.Published.CasselmanWallach ∧
       GlobalTheory.Published.HarishChandraFinite ∧ GlobalTheory.Published.CuspRapidDecay)
     (g : GlobalTheory.RealGeo.GeoHalf C R.toRealDat fun _ => 1) (Z' : ReadL (newR R lam err) (reFace F Dc Sp Zsc) ex.p0 Y')
