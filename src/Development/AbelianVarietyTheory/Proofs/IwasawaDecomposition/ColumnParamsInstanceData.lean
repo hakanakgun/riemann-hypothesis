@@ -223,26 +223,29 @@ theorem twArgs_exists : (GlobalTheory.Published.DiscreteSeriesCover ∧ GlobalTh
     GlobalTheory.T.reFace_zero_part_conventions_chosen_again (w.st Z).toD7 _ _ _ _ (famT t) _ t.r.z.R t.r.z.F t.r.z.cG ex.p0 t.r.Y t.r.Z Dc Sp Zsc t.r.z.pins t.r.intersectionNumber_baseChange hp
   let x : TwIn ex := newTw (R := t.r.z.R) (F := t.r.z.F) (cG := t.r.z.cG) (Y := t.r.Y) (Z := t.r.Z) (Dc := Dc) (Sp₀ := Sp₀) (Sp := Sp)
     (Zsc₀ := Zsc₀) (Zsc := Zsc) (Y' := Y') lam err hC t.r.z.geo Z' C₀ sEE hP hH hE hG hA.2 hM h1 h3 h4 h13
-  let a : TwArgs ex t :=
-    { Dc := Dc, Sp := Sp, Zsc := Zsc, lam := lam, err := err, lam_eq := hl, x := x
-      pack := rfl
-      intersectionNumber_baseChange := (by with_unfolding_all exact (hH :))
-      κ := (by with_unfolding_all exact ((HEq.refl t.r.z.geo.κ) :))
-      v₀ := (by with_unfolding_all exact ((HEq.refl t.r.z.geo.v₀) :))
-      fw := (by with_unfolding_all exact ((HEq.refl t.r.z.geo.fw.e) :))
-      tup := (by with_unfolding_all exact ((heq_of_eq h1) :))
-      tupT := (by with_unfolding_all exact ((heq_of_eq h2) :))
-      jA := (by with_unfolding_all exact (h3 :))
-      jA0 := (by with_unfolding_all exact (h4 :))
-      eMt := (by with_unfolding_all exact (h5 :))
-      PY := (by with_unfolding_all exact (h6 :))
-      PW := (by with_unfolding_all exact (h9 :))
-      eFT := (by with_unfolding_all exact (h7 :))
-      IL := (by with_unfolding_all exact (h8 :))
-      eE := (by with_unfolding_all exact (h10 :))
-      eW := (by with_unfolding_all exact (h11 :))
-      jW := (by with_unfolding_all exact (h13 :))
-      eRR := (by with_unfolding_all exact (h12 :)) }
+  let a : TwArgs ex t := by
+    set_option backward.isDefEq.lazyWhnfCore false in
+    set_option backward.isDefEq.lazyProjDelta false in
+      exact
+        { Dc := Dc, Sp := Sp, Zsc := Zsc, lam := lam, err := err, lam_eq := hl, x := x
+          pack := rfl
+          intersectionNumber_baseChange := (by with_unfolding_all exact (hH :))
+          κ := (by with_unfolding_all exact ((HEq.refl t.r.z.geo.κ) :))
+          v₀ := (by with_unfolding_all exact ((HEq.refl t.r.z.geo.v₀) :))
+          fw := (by with_unfolding_all exact ((HEq.refl t.r.z.geo.fw.e) :))
+          tup := (by with_unfolding_all exact ((heq_of_eq h1) :))
+          tupT := (by with_unfolding_all exact ((heq_of_eq h2) :))
+          jA := (by with_unfolding_all exact (h3 :))
+          jA0 := (by with_unfolding_all exact (h4 :))
+          eMt := (by with_unfolding_all exact (h5 :))
+          PY := (by with_unfolding_all exact (h6 :))
+          PW := (by with_unfolding_all exact (h9 :))
+          eFT := (by with_unfolding_all exact (h7 :))
+          IL := (by with_unfolding_all exact (h8 :))
+          eE := (by with_unfolding_all exact (h10 :))
+          eW := (by with_unfolding_all exact (h11 :))
+          jW := (by with_unfolding_all exact (h13 :))
+          eRR := (by with_unfolding_all exact (h12 :)) }
   have hCols := newTw_preserves_columns (R := t.r.z.R) (F := t.r.z.F) (cG := t.r.z.cG)
     (Y := t.r.Y) (Z := t.r.Z) (Dc := Dc) (Sp₀ := Sp₀) (Sp := Sp) (Zsc₀ := Zsc₀)
     (Zsc := Zsc) (Y' := Y') lam err hC t.r.z.geo Z' C₀ sEE hP hH hE hG hA.2 hM h1 h3 h4 h13 t.inGeo
