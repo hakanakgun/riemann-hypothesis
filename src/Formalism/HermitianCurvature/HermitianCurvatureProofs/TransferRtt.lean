@@ -514,10 +514,22 @@ theorem Lams_sc (u : ℂ) (a : Pr P.r) : Lams P u * sc P a = sc P a * Lams P u :
   unfold Lams; rw [Finset.sum_mul, Finset.mul_sum]
   exact Finset.sum_congr rfl fun j _ => lams_sc P j u a
 
-theorem zeta_mem_function_algebra : zA P ∈ fnsA P := by simp [fnsA]
-theorem mem_zb : zbA P ∈ fnsA P := by simp [fnsA]
-theorem mem_g : ggA P ∈ fnsA P := by simp [fnsA]
-theorem mem_G : ggiA P ∈ fnsA P := by simp [fnsA]
+theorem zeta_mem_function_algebra : zA P ∈ fnsA P := by
+  unfold fnsA
+  apply Set.mem_union_right
+  simp
+theorem mem_zb : zbA P ∈ fnsA P := by
+  unfold fnsA
+  apply Set.mem_union_right
+  simp
+theorem mem_g : ggA P ∈ fnsA P := by
+  unfold fnsA
+  apply Set.mem_union_right
+  simp
+theorem mem_G : ggiA P ∈ fnsA P := by
+  unfold fnsA
+  apply Set.mem_union_right
+  simp
 
 theorem fcomm {x y : A P} (hx : x ∈ fnsA P) (hy : y ∈ fnsA P) : x * y = y * x := (Mx2.levFns P).1 x hx y hy
 
